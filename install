@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# pip install -r requirements.txt
+# while read line; do echo $line; done < requirements.txt
+
+filename='requirements.txt'
+n=1
+find . -name $filename |
+while read -r line
+do
+# reading each line
+    echo "File No. $n : $line"
+    n=$((n+1))
+    pip install -r $line
+done
+echo $filename
