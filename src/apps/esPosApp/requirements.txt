@@ -1,0 +1,5 @@
+elasticsearch==7.9.1
+urllib3==1.25.9
+requests==2.24.0
+PyYaml==5.3.1
+pymysql==0.10.1

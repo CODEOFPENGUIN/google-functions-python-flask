@@ -9,6 +9,8 @@ app_dir = os.path.join(os.path.dirname(__file__), "apps")
 for dir in os.listdir(app_dir):
     sys.path.append(os.path.abspath(os.path.join(app_dir + '/' + dir)))
 
+sys.path.append(os.path.join(os.path.dirname(__file__), "common"))
+
 from resources import resources_apps
 app.register_blueprint(resources_apps)
 

@@ -13,4 +13,3 @@ do
     n=$((n+1))
     pip install -r $line
 done
-echo $filename

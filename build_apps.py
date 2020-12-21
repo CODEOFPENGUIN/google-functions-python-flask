@@ -2,22 +2,30 @@ import os
 import sys
 import shutil
 
+root = os.path.dirname(__file__)
+
 def build():
-    root = os.path.dirname(__file__)
     target = os.path.join(root, "dist")
     if os.path.isdir(target):
         shutil.rmtree(target)
     
     os.mkdir(target)
+
     apps_dir_path = os.path.join(root, "src/apps")
     apps_dirs = os.listdir(apps_dir_path)
     
+    common_dir_path = os.path.join(root, "src/common")
+    
     for dir in apps_dirs:
         copy_target = os.path.join(target, dir)
+        print(copy_target)
+        print(os.path.abspath(os.path.join(apps_dir_path, dir)))
         shutil.copytree(os.path.abspath(os.path.join(apps_dir_path, dir)), os.path.abspath(copy_target))
+        print(common_dir_path)
+        shutil.copytree(os.path.abspath(common_dir_path), os.path.abspath(os.path.join(copy_target, "common")))
+
 
 def copy_requirements():
-    root = os.path.dirname(__file__)
     apps_dir_path = os.path.abspath(os.path.join(root, "dist"))
     apps_dirs = os.listdir(apps_dir_path)
 

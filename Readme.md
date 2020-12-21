@@ -4,9 +4,10 @@
 │   ├── apps
 │   │   └── [APP_NAME]
   ...
-│   ├── common       # 공통 common 모음으로 new_app.py 실행시 copy 되는 대상.
+│   ├── common       # 공통 common 모음으로 build_apps.py 실행시 copy 되는 대상.
 │   │   ├── __init__\ .py
 │   │   ├── logger.py # log 관련 공통
+│   │   ├── lmysql.py # mysql 관련 공통
 │   │   ├── response.py # 응답 전문 템플릿
 │   │   └── utils.py # utils
 │   ├── app.py
@@ -91,7 +92,6 @@ $ python new_app.py
 Enter app name: youtubeApp
 
 >>>>>>>>> App name is : test2
->>>>>>>>> common folder copied.
 >>>>>>>>> __init__ .py created.
 >>>>>>>>> main.py created.
 >>>>>>>>> requirements.txt created.

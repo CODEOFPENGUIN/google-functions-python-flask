@@ -18,10 +18,7 @@ def create_new_app():
         print("!!!!!!!Already Exists!!!!!!!!!")
         print(before_arrow + "Exit")
     else:
-        common_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "src/common"))
         os.mkdir(target_dir)
-        shutil.copytree(common_dir, os.path.join(target_dir, 'common'))
-        print(before_arrow + "common folder copied.")
         for file_name in new_file_list:
             with open(os.path.join(target_dir, file_name), 'w'):
                 print(before_arrow + file_name + " created.")

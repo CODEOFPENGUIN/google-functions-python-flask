@@ -3,7 +3,7 @@ import sys
 import os
 
 from apps.youtubeApp.main import youtube
-
+from apps.esPosApp.main import esPos
 # 1. new_app.py 를 통하여 testApp 생성 후 main.py 에서 testMain def 작성시
 # e.g. from apps.testApp.main import testApp
 resources_apps = Blueprint('resources', __name__,)
@@ -16,3 +16,7 @@ resources_apps = Blueprint('resources', __name__,)
 @resources_apps.route('/youtube')
 def youtube_handler():
     return youtube(request)
+
+@resources_apps.route('/espos')
+def espos_handler():
+    return esPos(request)
